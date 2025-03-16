@@ -2,6 +2,11 @@ This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-
 
 ## Getting Started
 
+First, add .env file:
+# .env
+DATABASE_URL="file:./db/dev.db"
+JWT_SECRET="thisisasecretkey"
+
 First, run the development server:
 
 ```bash
