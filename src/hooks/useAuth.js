@@ -15,7 +15,6 @@ export function useAuth(redirectPath = routes.login) {
 
     const verifyUserToken = async () => {
       if (!token) {
-        router.push(redirectPath);
         return;
       }
 
@@ -39,7 +38,7 @@ export function useAuth(redirectPath = routes.login) {
           router.push(redirectPath);
         }
       } catch (error) {
-        router.push(redirectPath);
+        console.log(error);
       } 
     };
 
