@@ -16,7 +16,7 @@ export default function useLogin() {
     try {
       setLoading(true);
       const { data } = await login({ email, password });
-      console.log(data);
+   
       document.cookie = `token=${data.token}`;
 
       router.push(routes.payment);
