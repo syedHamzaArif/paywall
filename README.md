@@ -39,7 +39,7 @@ This is a **Paywall Application** built with **Next.js**, **Prisma**. It allows 
 - The application includes the following API routes:
   - `/api/login`: Login User.
   - `/api/signup`: Register User.
-  - `/api/verifyToken`: Handles authentication and verifying token.
+  - `/api/verifyToken`: Handles authentication and verifying tokens.
   - `/api/payments`: Fetches payments for the logged-in user.
 
 ---
@@ -49,15 +49,22 @@ This is a **Paywall Application** built with **Next.js**, **Prisma**. It allows 
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/your-username/payment-management-app.git
-cd payment-management-app
+git clone https://github.com/syedHamzaArif/paywall.git
+cd paywall
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started
 
-First, add .env file and see .env.example and store that data in .env
+### 1. Environment Variables
+First, create a `.env` file in the root of your project and add the following:
+DATABASE_URL="file:./db/dev.db"
+JWT_SECRET="thisisasecretkey"
 
-First, run the development server:
+### 2. Generate Prisma Client
+Run the following command to generate the Prisma client:
+
+```sh
+npx prisma generate
 
 ```bash
 npm run dev
