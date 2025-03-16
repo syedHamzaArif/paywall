@@ -55,10 +55,7 @@ This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-
 
 ## Getting Started
 
-First, add .env file:
-# .env
-DATABASE_URL="file:./db/dev.db"
-JWT_SECRET="thisisasecretkey"
+First, add .env file and see .env.example and store that data in .env
 
 First, run the development server:
 
