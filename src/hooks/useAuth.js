@@ -14,7 +14,8 @@ export function useAuth(redirectPath = routes.login) {
     const token = document.cookie.split("token=")[1]?.split(";")[0];
 
     const verifyUserToken = async () => {
-      if (!token) {
+      if (!token && pathname !== "/") {
+        router.push(redirectPath);
         return;
       }
 

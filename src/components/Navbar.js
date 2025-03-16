@@ -3,11 +3,21 @@ import { useAuth } from "@/hooks/useAuth";
 import useLogout from "@/hooks/useLogout";
 import Link from "next/link";
 import { routes } from "@/config/routes";
+import { useEffect, useState } from "react";
+import { usePathname } from "next/navigation";
 
 export default function Navbar() {
   const { isAuthenticated } = useAuth();
   const { handleLogout } = useLogout();
+  const pathname = usePathname();
 
+  const [token, setToken] = useState(null);
+
+  useEffect(() => {
+    
+    const tokenFromCookie = document.cookie.split("token=")[1]?.split(";")[0];
+    setToken(tokenFromCookie);
+  }, []);
   return (
     <nav className="bg-white shadow-lg">
       <div className="max-w-6xl mx-auto px-4 py-6 flex justify-between items-center">

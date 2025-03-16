@@ -12,8 +12,7 @@ export default function useLogout() {
   const handleLogout = async () => {
     document.cookie = "token=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
     
-    router.push(routes.login);
-    router.refresh();
+    window.location.href = routes.login;
   };
 
   return {
