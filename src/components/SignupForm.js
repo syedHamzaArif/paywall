@@ -16,6 +16,7 @@ export default function SignupForm() {
     setPassword,
     alert,
     handleSignup,
+    loading
   } = useSignup();
 
   return (
@@ -41,7 +42,7 @@ export default function SignupForm() {
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
-          <Button onClick={handleSignup}>Sign Up</Button>
+          <Button onClick={handleSignup} loading={loading}>Sign Up</Button>
           <AuthLink
             href={routes.login}
             text="Already have an account?"
